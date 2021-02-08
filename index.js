@@ -22,7 +22,7 @@ client.on('ready', () => {
   }
 
   // Initialize WOKCommands with specific folders and MongoDB
-  const wok = new WOKCommands(client, 'commands', 'features', {
+  const wok = new WOKCommands(client, {
     commandsDir: 'commands',
     featureDir: 'features',
     messagesPath,
