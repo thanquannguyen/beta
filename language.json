@@ -1,0 +1,74 @@
+{
+    "languages": ["english", "vietnamese"],
+    "translations": {
+      "THE_SUM_IS": {
+        "english": "The sum is",
+        "vietnamese": "Tổng cộng là"
+      },
+      "LANGUAGE_SET": {
+        "english": "Language has been set to English.",
+        "vietnamese": "Ngôn ngữ đã cài đặt thành tiếng Việt."
+      },
+      "OWNER": {
+        "english": "Only the owner of the bot <@!180690270981980161> can run this command.",
+        "vietnamese": "Chỉ có chủ bot <@!180690270981980161> mới có thể thực hiện lệnh này."
+      },
+      "PLEASE_WAIT": {
+        "english": "Please wait",
+        "vietnamese": "Vui lòng đợi"
+      },
+      "VOICE_NEED_ACTIVITY": {
+        "english": "You must be connected to a voice channel to use this command.",
+        "vietnamese": "Bạn phải ở trong kênh voice mới thực hiện được lệnh này."
+      },
+      "NOT_PHONE": {
+        "english": "Note: Not working on phone.",
+        "vietnamese": "Ghi chú: không hoạt động trên điện thoại"
+      },
+      "AWKWORD_CANT_START": {
+        "english": "Can't start Awkword session, something's wrong.",
+        "vietnaese": "Không thể tạo game Awkword, có lỗi xảy ra."
+      },
+      "BETRAYAL_CANT_START": {
+        "english": "Can't start Betrayal session, something's wrong.",
+        "vietnaese": "Không thể tạo game Betrayal, có lỗi xảy ra."
+      },
+      "CHECKERS_CANT_START": {
+        "english": "Can't start Checkers session, something's wrong.",
+        "vietnamese": "Không thể tạo game Checkers, có lỗi xảy ra."
+      },
+      "CHESS_CANT_START": {
+        "english": "Can't start Chess session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game Chess, có lỗi xảy ra."
+      },
+      "DOODLECREW_CANT_START": {
+        "english": "Can't start DoodleCrew session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game DoodleCrew, có lỗi xảy ra."
+      },
+      "FISHINGTON_CANT_START": {
+        "english": "Can't start Fishington session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game Fishington, có lỗi xảy ra."
+      },
+      "LETTERTILE_CANT_START": {
+        "english": "Can't start Fishington session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game Fishington, có lỗi xảy ra."
+      },
+      "POKER_CANT_START": {
+        "english": "Can't start Poker session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game Poker, có lỗi xảy ra."
+      },
+      "PUTTPARTY_CANT_START": {
+        "english": "Can't start PuttParty session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game PuttParty, có lỗi xảy ra."
+      },
+      "SPELLCAST_CANT_START": {
+        "english": "Can't start SpellCast session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo game SpellCast, có lỗi xảy ra."
+      },
+      "YOUTUBE_CANT_START": {
+        "english": "Can't start Youtube session, somethings's wrong.", 
+        "vietnamese": "Không thể tạo Youtube, có lỗi xảy ra."
+      }         
+    }
+  }
+  
