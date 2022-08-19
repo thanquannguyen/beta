@@ -1,9 +1,18 @@
 require('dotenv').config()
-const { Client, Intents, Collection } = require('discord.js');
-const { registerCommands, registerEvents } = require('./utils/registry');
+const {
+    Client,
+    Intents,
+    Collection
+} = require('discord.js');
+const {
+    registerCommands,
+    registerEvents
+} = require('./utils/registry');
 const fs = require('fs');
-const { promisify } = require('util');
-const client = new Client({ 
+const {
+    promisify
+} = require('util');
+const client = new Client({
     shards: "auto",
     intents: [
         Intents.FLAGS.DIRECT_MESSAGES,
@@ -21,7 +30,7 @@ const client = new Client({
     },
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
     failIfNotExists: false,
-    disalbeMentions: "all",
+    disableMentions: "all",
     restTimeOffset: 0,
 });
 module.exports = client;
@@ -36,7 +45,7 @@ require("./handler")(client);
 //     const commandFile = fs
 //     .readdirSync(`./commands/${dir}/`)
 //     .filter((file) => file.endsWith('.js'))
-    
+
 //     for (const file of commandFile) {
 //         const command = require(`./commands/${dir}/${file}`)
 //         client.commands.set(command.name, command);
@@ -55,7 +64,7 @@ require("./handler")(client);
 
 (async () => {
     await registerEvents(client, '../events');
-    await registerCommands(client, '../commands');  
+    await registerCommands(client, '../commands');
 })();
 
 //invite: https://discord.com/oauth2/authorize?client_id=858371436245549076&permissions=8&scope=applications.commands%20bot
