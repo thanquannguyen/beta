@@ -1,0 +1,137 @@
+Music, giveaway, economy, game, afk
+
+Merge uptime.js into botinfo.js
+
+Try to use timestamp <t:1020506400:d> 
+
+Change mute to timeout
+<user>.timeout(THE MUTE IN MS,`THE REASON`)
+
+ID Owner: ${message.guild.ownerId}
+Name Server: ${message.guild.name}
+Available: ${message.guild.available}
+ID Server: ${message.guild.id}
+ShardID: ${message.guild.shardID}
+Icon Server: ${message.guild.icon}
+Splash: ${message.guild.splash}
+Discovery Splash: ${message.guild.discoverySplash}
+Region: ${message.guild.region}
+Member Count: ${message.guild.memberCount}
+Large: ${message.guild.large}
+ApplicationID: ${message.guild.applicationID}
+AFK Timeout: ${message.guild.afkTimeout}
+AFK Channel ID: ${message.guild.afkChannelID}
+System Channel ID: ${message.guild.systemChannelID}
+Embed Enabled: ${message.guild.embedEnabled}
+Level Server Boost: ${message.guild.premiumTier}
+Number Boost: ${message.guild.premiumSubscriptionCount}
+Verification Level: ${message.guild.verificationLevel}
+Explicit Content Filter: ${message.guild.explicitContentFilter}
+MFA Level: ${message.guild.mfaLevel}
+Joined Timestamp: ${message.guild.joinedTimestamp}
+Default Message Notifications: ${message.guild.defaultMessageNotifications}
+Maximum Members: ${message.guild.maximumMembers}
+Maximum Presences: ${message.guild.maximumPresences}
+Approximate Member Count: ${message.guild.approximateMemberCount}
+Approximate Presence Count: ${message.guild.approximatePresenceCount}
+Vanity URL Code: ${message.guild.vanityURLCode}
+Vanity URL Uses: ${message.guild.vanityURLUses}
+Description Server: ${message.guild.description}
+Server Banner: ${message.guild.banner}
+Rules Channel ID: ${message.guild.rulesChannelID}
+Public Updates Channel ID: ${message.guild.publicUpdatesChannelID}
+Preferred Locale: ${message.guild.preferredLocale}
+
+  youtube together / watch together: '880218394199220334',
+  youtubedev: '880218832743055411',
+  poker: '755827207812677713',
+  betrayal: '773336526917861400',
+  fishing: '814288819477020702',
+  chess: '832012774040141894',
+  chessdev: '832012586023256104',
+  lettertile: '879863686565621790',
+  wordsnack: '879863976006127627',
+  doodlecrew: '878067389634314250',
+  awkword: '879863881349087252',
+  spellcast: '852509694341283871',
+  checkers: '832013003968348200',
+  puttparty: '763133495793942528',
+
+https://gist.github.com/GeneralSadaf/42d91a2b6a93a7db7a39208f2d8b53ad
+
+  reload.js command table to long ( > 2000)
+
+
+  const { 
+      Client,
+      Message,
+      MessageEmbed,
+      MessageActionRow,
+      MessageButton
+  } = require('discord.js')
+  
+  module.exports = {
+      // name: "",
+      // aliases: ['', ''],
+      // category: "",
+      // description: "",
+      // usage: ``,
+      // timeout: 1000,
+      // emoji: "",
+      // userPermission: ['', ''],
+      // botPermission: ['', ''],
+      // premium: false,
+  
+      /**
+      * @param {Client} client
+      * @param {Message} message
+      * @param {String[]} args
+      */
+  
+      run: async (client, message, args) => {
+  
+      }
+  }
+
+
+CREATE_INSTANT_INVITE
+KICK_MEMBERS
+BAN_MEMBERS
+ADMINISTRATOR
+MANAGE_CHANNELS
+MANAGE_GUILD
+ADD_REACTIONS
+VIEW_AUDIT_LOG
+PRIORITY_SPEAKER
+STREAM
+VIEW_CHANNEL
+SEND_MESSAGES
+SEND_TTS_MESSAGES
+MANAGE_MESSAGES
+EMBED_LINKS
+ATTACH_FILES
+READ_MESSAGE_HISTORY
+MENTION_EVERYONE
+USE_EXTERNAL_EMOJIS
+VIEW_GUILD_INSIGHTS
+CONNECT
+SPEAK
+MUTE_MEMBERS
+DEAFEN_MEMBERS
+MOVE_MEMBERS
+USE_VAD
+CHANGE_NICKNAME
+MANAGE_NICKNAMES
+MANAGE_ROLES
+MANAGE_WEBHOOKS
+MANAGE_EMOJIS_AND_STICKERS
+USE_APPLICATION_COMMANDS
+REQUEST_TO_SPEAK
+MANAGE_EVENTS
+MANAGE_THREADS
+CREATE_PUBLIC_THREADS
+CREATE_PRIVATE_THREADS
+USE_EXTERNAL_STICKERS
+SEND_MESSAGES_IN_THREADS
+START_EMBEDDED_ACTIVITIES
+MODERATE_MEMBERS
