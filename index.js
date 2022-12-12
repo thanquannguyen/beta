@@ -1,72 +1,90 @@
+const DiscordJS = require('discord.js')
+const WOKCommands = require('wokcommands')
 require('dotenv').config()
-const {
-    Client,
-    Intents,
-    Collection
-} = require('discord.js');
-const {
-    registerCommands,
-    registerEvents
-} = require('./utils/registry');
-const fs = require('fs');
-const {
-    promisify
-} = require('util');
-const client = new Client({
-    shards: "auto",
-    intents: [
-        Intents.FLAGS.DIRECT_MESSAGES,
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-        Intents.FLAGS.GUILD_PRESENCES,
-        Intents.FLAGS.GUILD_VOICE_STATES,
-    ],
-    // intents: 32767,
-    ws: {
-        properties: {
-            $browser: "Discord iOS" // or "Discord Android", doesn't matter lol
-        },
-    },
-    partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
-    failIfNotExists: false,
-    disableMentions: "all",
-    restTimeOffset: 0,
-});
-module.exports = client;
 
-client.commands = new Collection();
-client.slashCommands = new Collection();
-require("./handler")(client);
+const client = new DiscordJS.Client({
+  partials: ['MESSAGE', 'REACTION'],
+})
 
 
-// let commandFolder = fs.readdirSync('./commands/')
-// commandFolder.forEach((dir) => {
-//     const commandFile = fs
-//     .readdirSync(`./commands/${dir}/`)
-//     .filter((file) => file.endsWith('.js'))
+client.on('ready', () => {
+  // See the "Language Support" section of this documentation
+  // An empty string = ignored
+  const messagesPath = 'languages.json'
 
-//     for (const file of commandFile) {
-//         const command = require(`./commands/${dir}/${file}`)
-//         client.commands.set(command.name, command);
-//     }
-// })
+  // Used to configure the database connection.
+  // These are the default options but you can overwrite them
+  const dbOptions = {
+    keepAlive: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  }
 
-// let eventFolder = fs
-//     .readdirSync('./events')
-//     .filter((file) => file.endsWith('.js'))
+  // Initialize WOKCommands with specific folders and MongoDB
+  const wok = new WOKCommands(client, {
+    commandsDir: 'commands',
+    featureDir: 'features',
+    messagesPath,
+    showWarns: true, // Show start up warnings
+    dbOptions
+    
+  })
 
-//     for (const file of eventFolder) {
-//         const event = require(`./events/${file}`)
-//         const eventname = file.split('.')[0]
-//     }
+   wok.on('databaseConnected', (connection, state) => {
+    console.log('The state is', state)
+  })
+
+  // Ran when a server owner attempts to set a language that you have not supported yet
+  wok.on('languageNotSupported', (message, lang) => {
+    console.log('Attempted to set language to', lang)
+  })
+  
+    // Set your MongoDB connection path
+    .setMongoPath(process.env.MONGO_URI)
+    // Set the default prefix for your bot, it is ! by default
+    .setDefaultPrefix('vct')
+    // Set the embed color for your bot. The default help menu will use this. This hex value can be a string too
+    .setColor(0xff0000)
+    .setCategorySettings([
+      {
+        name: 'General',
+        emoji: '👑',
+        hidden: false
+      },
+      {
+        name: 'Fun',
+        emoji: '🎮'
+      },
+      {
+        name: 'Economy',
+        emoji: '💸'
+      },
+      {
+        // You can change the default emojis as well
+        name: 'Configuration',
+        emoji: '🚧',
+        //  You can also hide a category from the help menu
+        //  Admins bypass this
+        hidden: false
+      }
+    ])
+    .setBotOwner(['180690270981980161'])
+    
+})
+
+client.on('ready', () => {
+  // Initialize WOKCommands
+  new WOKCommands(client, {
+    // Can be a single string as well
+    testServers: ['743013733323767820']
+  })
+
+  new WOKCommands(client, instance, 'commands', 'features').setSyntaxError(instance.messageHandler.get(guild, 'SYNTAX_ERROR'))
+
+})
 
 
-(async () => {
-    await registerEvents(client, '../events');
-    await registerCommands(client, '../commands');
-})();
 
-//invite: https://discord.com/oauth2/authorize?client_id=858371436245549076&permissions=8&scope=applications.commands%20bot
 
-client.login(process.env.token);
+client.login(process.env.TOKEN)
